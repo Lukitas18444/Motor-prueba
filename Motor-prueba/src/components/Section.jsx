@@ -2,18 +2,19 @@
 
 const Section = () => {
   return (
-    <>
-        <div>Section</div>
-    <div>Section</div>
-    <div>Section</div>
-    <div>Section</div>
-    <div>Section</div>
-    <div>Section</div>
-    <div>Section</div>
-    <div>Section</div>
-    <div>Section</div>
-    </>
-    
+    <section>
+      <div>Section</div>
+      <div>Section</div>
+      <div>Section</div>
+      <div>Section</div>
+      <div>Section</div>
+      <div>Section</div>
+      <div>Section</div>
+      <div>Section</div>
+      <div>Section</div>
+    </section>
+  
+ 
   )
 }
 

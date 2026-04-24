@@ -6,7 +6,6 @@ import '../style/hero.css';
 const Hero = () => {
     const [init, setInit] = useState(false);
 
-    // Inicializa el motor de partículas una sola vez
     useEffect(() => {
         initParticlesEngine(async (engine) => {
             await loadSlim(engine);
@@ -16,12 +15,13 @@ const Hero = () => {
     }, []);
 
     const options = {
+        fullScreen: { enable: false }, // CLAVE: Esto evita que ocupen toda la pantalla
         fpsLimit: 120,
         interactivity: {
             events: {
                 onHover: {
                     enable: true,
-                    mode: "grab", // Esto hace que se conecten al mouse
+                    mode: "grab",
                 },
             },
             modes: {
@@ -33,7 +33,7 @@ const Hero = () => {
             links: {
                 color: "#ffffff",
                 distance: 150,
-                enable: true, // Esto crea las líneas entre puntos
+                enable: true,
                 opacity: 0.3,
                 width: 1,
             },
@@ -41,16 +41,22 @@ const Hero = () => {
                 enable: true,
                 speed: 1,
             },
-            number: { value: 80 }, // Cantidad de triangulitos
+            number: { value: 80 },
             opacity: { value: 0.3 },
-            shape: { type: "cyrcle" },
+            shape: { type: "circle" }, // Corregido de "cyrcle" a "circle"
             size: { value: { min: 1, max: 3 } },
         },
     };
 
     return (
         <div className="hero-container">
-            {init && <Particles id="tsparticles" options={options} />}
+            {init && (
+                <Particles 
+                    id="tsparticles" 
+                    className="particles-canvas" // Clase para control total desde CSS
+                    options={options} 
+                />
+            )}
             
             <div className="hero-content">
                 <h1>Distribuidora Motor Trans S.A</h1>

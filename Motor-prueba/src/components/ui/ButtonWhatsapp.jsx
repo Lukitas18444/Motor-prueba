@@ -16,7 +16,7 @@ const ButtonWhatsapp = () => {
       rel="noopener noreferrer"
     >
       {/* Puedes usar un icono aquí más adelante */}
-      <span>WhatsApp</span> 
+      <span></span> 
     </a>
   )
 }

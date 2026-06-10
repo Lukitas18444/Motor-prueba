@@ -237,5 +237,5 @@
     transform: scale(1.1);
 }
 .arrow-btn:first-child { 
-    border-color: ${blueOnTop ? '#003366' : '#ccc'};
+    border-color:#003366;
 }

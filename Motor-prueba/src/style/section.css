@@ -1,35 +1,37 @@
 .container-section {
     height: 100vh;
     display: grid;
-    /* Creamos 12 columnas y 10 filas iguales */
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(10, 1fr);
     background-color: rgb(230, 230, 230);
     padding: 50px;
+    position: relative;
 }
 
 .cuadrado-base {
     background-color: #003366;
-    /* grid-area: fila-inicio / col-inicio / fila-fin / col-fin */
-    grid-area: 2 / 2 / 7 / 8; 
-    /* Va de la fila 2 a la 7, y de la col 2 a la 8 */
+    grid-area: 2 / 2 / 8 / 9; 
     border-radius: 15px;
-    z-index: 1;
+    transition: all 0.4s ease;
+    cursor:default;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(10, 1fr);
 }
 
-.cuadrado-flotante {
-    background-color: white;
-    /* Empezamos un poco después y terminamos después para que se solape */
-    grid-area: 4 / 5 / 9 / 11;
-    /* Va de la fila 4 a la 9, y de la col 5 a la 11 */
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 40px;
-    box-shadow: 15px 15px 30px rgba(0,0,0,0.1);
-    border-radius: 15px;
+.imagenCamiones{
+    grid-area: 1/ 7 / 13 / 13; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    filter: drop-shadow(5px 5px 15px rgba(0,0,0,0.5)); 
+    border-radius: 4%;
+    border: 1px solid #003366;
 }
+.texto-container-azul{
+    grid-area: 2/ 1 / 8 / 4
+}
+
 
 .first-title{
     grid-area: 1 / 2 / 2 / 12;
@@ -50,5 +52,190 @@
 
 .first-title span{
     padding:  0 40px;
+    font-size: 2.5rem;
+}
 
+
+.cuadrado-flotante {
+    background-color: white;
+    grid-area: 4 / 5 / 10/ 12;
+    display: grid;
+    padding: 40px;
+    box-shadow: 15px 15px 30px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    cursor:default;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+}
+
+
+.content-text h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    text-decoration: underline;
+}
+
+.content-text {
+    grid-area: 1 / 2 / 2 / 12;
+    display: flex;
+    justify-content: center;
+}
+.container-logos{
+    grid-area: 2 / 2 / 6 / 12;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 20px;
+    gap: 20px;
+
+}
+
+.logo-item {
+    width: 150px; 
+    height: 80px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.logo-item img{
+   max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.container-descripcion{
+    grid-area: 6 / 3 / 7 / 11;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+}
+.container-descripcion h2,
+.container-descripcion-dos h2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 2rem;
+    color: #003366;
+    width: 100%;
+}
+
+.container-descripcion-dos h2::before,
+.container-descripcion-dos h2::after ,
+.container-descripcion h2::before,
+.container-descripcion h2::after {
+    content: "";
+    flex: 1; 
+    height: 2px; 
+    background-color: #003366; 
+}
+.container-descripcion p,
+.container-descripcion-dos p{
+    font-weight: 300;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.container-descripcion-dos{
+    grid-area: 9 / 3 / 11 / 11;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+}
+
+
+.cuadrado-base .content-text{
+    color: white;
+    grid-area: 2 / 2 / 4 / 6;
+    font-family:'Proxima Nova', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.2rem;
+}
+.cuadrado-base h2{
+    color: white;
+}
+
+.cuadrado-base .container-descripcion h2::before,
+.cuadrado-base .container-descripcion h2::after {
+    content: "";
+    flex: 1; 
+    height: 2px; 
+    background-color: white; 
+}
+
+.cuadrado-base .container-descripcion{
+    grid-area: 3 / 1 / 9 / 7;
+
+    color: white;
+}
+
+
+
+/*arrrow*/
+
+.active-top {
+    z-index: 10 !important;
+    transform: scale(1.02); /* Un pequeño efecto visual de "salto" al frente */
+}
+.arrows-container {
+    grid-area: 1 / 1 / 2 / 2; /* Ponlas donde quieras en tu grid */
+    display: flex;
+    gap: 10px;
+    align-self: center;
+}
+
+
+.arrow-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px; 
+    box-sizing: border-box;
+    pointer-events: none; 
+    z-index: 20;
+}
+
+.arrow-btn {
+    pointer-events: auto; /* Reactiva los clics en los botones */
+    background: white;
+    border: 1px solid #ddd;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #003366;
+}
+
+.arrow-btn:hover {
+    background: #003366;
+    color: white;
+    transform: scale(1.1);
+}
+.arrow-btn:first-child { 
+    border-color: ${blueOnTop ? '#003366' : '#ccc'};
 }

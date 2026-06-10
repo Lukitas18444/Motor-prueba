@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim"; 
 import '../style/hero.css';
+import videoFondo from '../assets/animacion.mp4';
+
+import igLogo from '../assets/ig-logo.png';
+import faceLogo from '../assets/facebook-logo.png'
 
 const Hero = () => {
     const [init, setInit] = useState(false);
@@ -50,10 +54,13 @@ const Hero = () => {
 
     return (
         <div className="hero-container">
+        <video  loop muted playsInline className="hero-video">
+            <source src={videoFondo} type="video/mp4" />
+        </video>
             {init && (
                 <Particles 
                     id="tsparticles" 
-                    className="particles-canvas" // Clase para control total desde CSS
+                    className="particles-canvas" 
                     options={options} 
                 />
             )}
@@ -61,6 +68,10 @@ const Hero = () => {
             <div className="hero-content">
                 <h1>Distribuidora Motor Trans S.A</h1>
                 <p>Repuestos para pesados</p>
+            </div>
+            <div className="container-redes">
+                <div className="insta-container"><a href="https://www.instagram.com/motortrans_autopartes_pesados/" target="_blank" rel="noopener noreferrer"><img src={igLogo} alt="instagram-logo" /></a></div>
+                <div className="face-container"><a href="https://www.facebook.com/MotortransAutopartesPesados/" target="_blank" rel="noopener noreferrer"><img src={faceLogo} alt="Facebook-logo" /></a></div>
             </div>
         </div>
     );

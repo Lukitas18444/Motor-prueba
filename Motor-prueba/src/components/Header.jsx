@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import '../style/header.css';
+import dmtLogo from '../assets/dmt-logo.png';
+
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
 
@@ -23,7 +26,7 @@ const Header = () => {
     <header className={`container-header ${scrolled ? 'header-active' : ''}`} >
       <div className='container-header-item'>
         <div className='container-logo'>
-          <h1>Logo DMT</h1>
+          <img src={dmtLogo} alt="dmt logo" />
         </div>
         <div className='container-search'>
           <div>
@@ -32,9 +35,10 @@ const Header = () => {
           </div>
         </div>
         <div className='container-item'>
-          <li><a href="">Inicio</a></li>
-          <li><a href="">Productos</a></li>
-          <li><a href="">Nosotros</a></li>
+          <nav>
+            <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="/">Inicio</NavLink>
+            <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="/productos">Productos</NavLink>
+          </nav>
         </div>
       </div>
     </header>

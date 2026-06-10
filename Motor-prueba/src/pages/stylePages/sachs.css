@@ -1,0 +1,39 @@
+.sachs-banner {
+  background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 0, 0, 0.8)), 
+  url('https://d3nqciqdbtzkc.cloudfront.net/articulos/articulos-33783.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+  width: 70vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.sachs-banner-content {
+  max-width: 800px;
+  padding: 20px;
+}
+
+.sachs-logo-banner {
+  width: 180px;
+  margin-bottom: 20px;
+  filter: brightness(0) invert(1); /* Hace el logo blanco si es azul */
+}
+
+.sachs-banner h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.sachs-banner p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}

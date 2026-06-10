@@ -19,7 +19,7 @@ const Productos = () => {
     <>
     <div className='page-map'>
       <div className='page-map-item'>
-        <NavLink className={"page-map-item-nav"} to="/productos">Productos > </NavLink>
+        <NavLink className={"page-map-item-nav"} to="/productos">Productos - </NavLink>
         <NavLink className={"page-map-item-nav"} to="/">Volver al inicio</NavLink> 
       </div>
     </div>

@@ -36,7 +36,7 @@ const BrandSection = () => {
 }, []);
 
   return (
-    <section className="brand-section overley">
+    <section className="brand-section overley" id="BrandSection">
       <div className='container-detalles-pagina'>
         <p>Distribuidora oficial de las siguientes marcas: </p>
         <p>Ir a productos</p>

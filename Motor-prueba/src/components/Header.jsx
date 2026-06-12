@@ -8,9 +8,14 @@ const Header = () => {
 
   const [scrolled, setScrolled] = useState(false);
 
+  const scrollToSection = (id) => {
+  const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   useEffect(() => {
     const handleScroll = () => {
-      // Si el scroll baja más de 50px, cambiamos el estado
       if (window.scrollY > 50) {
         setScrolled(true);
       } else {
@@ -37,7 +42,13 @@ const Header = () => {
         <div className='container-item'>
           <nav>
             <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="/">Inicio</NavLink>
-            <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to="/productos">Productos</NavLink>
+            <button 
+                className="nav-link" 
+                onClick={() => scrollToSection('BrandSection')}
+                style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+              >
+                Productos
+            </button>
           </nav>
         </div>
       </div>

@@ -13,11 +13,12 @@ const SachsBanner = () => (
 );
 
 const Sachs = () => {
+  const [visibleCount, setVisibleCount] = useState(6);
   const [busqueda, setBusqueda] = useState('');
 
   const productosSachs = productosData.filter((p) => 
     p.marca === "Sachs" && 
-    p.codigo.toLowerCase().includes(busqueda.toLowerCase())
+    p.codigo.toLowerCase().includes(busqueda.toLowerCase()) 
   );
 
   return (
@@ -27,28 +28,40 @@ const Sachs = () => {
       <h1>Repuestos SACHS</h1>
       
       <input 
-        type="text" 
-        placeholder="Buscar código en Sachs..." 
-        value={busqueda}
-        onChange={(e) => setBusqueda(e.target.value)}
-        className="search-input"
-      />
+  type="text" 
+  value={busqueda} 
+  onChange={(e) => {
+    setBusqueda(e.target.value);
+    setVisibleCount(6);
+  }} 
+/>
 
       <div className="grid-productos">
         {productosSachs.length > 0 ? (
-          productosSachs.map((p) => (
+          productosSachs.slice(0,visibleCount).map(((p) => (
             <div key={p.id} className="card-producto">
+              <img src={p.imagenUrl} alt={p.nombre} />
               <h3>{p.codigo}</h3>
               <p>{p.nombre}</p>
+              <p> {p.codigoOriginal} </p>
+              <p> {p.posicion} </p>
+              <p> {p.descripcion} </p>
               <small>{p.marca}</small>
             </div>
           ))
-        ) : (
+        )) : (
           <div className="no-results">
             <p>No encontramos el código "{busqueda}" en productos Sachs.</p>
           </div>
         )}
-      </div>
+    </div>
+        <div className="container-boton-ver-mas" style={{ textAlign: 'center', marginTop: '20px' }}>
+    {visibleCount < productosSachs.length && (
+      <button onClick={() => setVisibleCount(visibleCount + 6)}>
+        Ver más productos
+      </button>
+    )}
+  </div>
     </div>
   );
 };

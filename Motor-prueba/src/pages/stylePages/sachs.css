@@ -4,7 +4,7 @@
   background-size: cover;
   background-position: center;
   height: 350px;
-  width: 70vw;
+  width: 80vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,7 +33,8 @@
   letter-spacing: 2px;
 }
 
-.sachs-banner p {
+.sachs-banner p{
   font-size: 1.2rem;
   opacity: 0.9;
+  padding: 20px;
 }

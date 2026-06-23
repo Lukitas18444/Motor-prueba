@@ -40,7 +40,7 @@ const Sachs = () => {
         {productosSachs.length > 0 ? (
           productosSachs.slice(0,visibleCount).map(((p) => (
             <div key={p.id} className="card-producto">
-              <img src={p.imagenUrl} alt={p.nombre} />
+              <img className="card-image"src={p.imagenUrl} alt={p.nombre} />
               <h3>{p.codigo}</h3>
               <p>{p.nombre}</p>
               <p> {p.codigoOriginal} </p>

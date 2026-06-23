@@ -67,8 +67,9 @@
   flex-direction: column;
   height: auto;
   align-self: flex-start;
-  
+  position: relative;
 }
+
 
 .card-producto:hover {
   transform: translateY(-10px); 
@@ -79,6 +80,18 @@
   height: 200px;
   object-fit: contain;
   border-bottom: 2px solid #f0f0f0;
+  position: relative;
+  display: block;
+}
+
+.card-image::after{
+  content: "imagen ilustrativa";
+  position: absolute;
+  background-color: #666;
+  color: white;
+  width: 40px;
+  height: 40px;
+  bottom: 0;
 }
 .card-footer {
   padding: 10px 15px 20px;

@@ -3,19 +3,9 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import '../style/brandSection.css';
 
+import brands from '../data/brands'
 
-const brands = [
-  { id: 1, name: 'ZF Sachs', desc: 'Calidad de equipo original Los productos SACHS se fabrican con materiales de alta calidad y reflejan el estado actual de la técnica. Son sinónimo de alto rendimiento y fiabilidad. Por esta razón, numerosos fabricantes de automóviles bien conocidos equipan sus vehículos con productos SACHS: cada año, más de 10 millones de vehículos nuevos equipados con amortiguadores SACHS salen de la cadena de producción.Además, SACHS ofrece embragues de alta calidad para fabricantes de equipo original y el mercado de repuestos.', logo: 'https://shop.arnold-classic.com/media/image/a3/92/ff/logo-sach.png', fondo:"https://partworks.de/media/image/manufacturer/181/lg/marken-zf-sachs.jpg" },
-  { id: 2, name: 'Mahle', desc: 'Mahle es una empresa que produce piezas de automóviles, cuya sede central está ubicada en Stuttgart, Alemania. Tiene participación en varios otros países, siendo los principales: Brasil, España, Estados Unidos, China, México, India, entre otros.', logo: 'https://www.mahle-aftermarket.com/media/system_files/img/mahle-logo2019.png',fondo:"https://play-lh.googleusercontent.com/qsx-XOhTunVOhiwlpWh4PttwCtPqxPZ80TP4dQClWe3G4QPhEv2Cjk20rgFYB7zbVz9M" },
-  { id: 3, name: 'Euroricambi', desc: 'Los productos Euroricambi se fabrican utilizando la tecnología más avanzada para elaboración de engranajes. Por esto  posee el mismo contenido tecnológico y de calidad, siendo de hecho el fruto de procesos de elaboración absolutamente idénticos a los que utilizan los productores originales.', logo: 'https://www.euroricambigroup.com/themes/custom/euroricambi/logo.svg', fondo:"https://exhibitorsearch.messefrankfurt.com/images/original/document_downloads/10000055202501/AEXV8A00AZSI/1693390841806_2027965283.jpg" },
-  { id: 4, name: 'Fram', desc: 'Un fabricante mundial de piezas de automóvil que presta sus servicios al mercado de repuestos y la industria de equipos originales en todo el mundo, con la mejor tecnología y capacidades en la ingeniería automotriz.', logo: 'https://catalogofram.com.ar/newpage/img/fram_logo_retangulo_branco_icn.png',fondo:"https://pldistribucion.com.ar/web/wp-content/uploads/FRAM.jpg" },
-  { id: 5, name: 'Sampa', desc: 'Sampa fue establecida en 1994 como distribuidora en un taller de 100 m2 con una experiencia en producción y en la industria que se remonta a 1950. Desde entonces, la empresa se ha transformado en un gigante de la fabricación, las compras y las ventas, operando en un campus de 150.000 m2con factorías integradas.', logo: 'https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/062019/sampa-logo.png?cUVKKAlE9AcLWQ7bBkk2JP52p66dAgir&itok=c9CoagpD', fondo:"https://i0.wp.com/heavydutypartsreport.com/wp-content/uploads/2023/02/HDPR-255-Website-Banner.png" },
-  { id: 6, name: 'Spicer', desc: 'Eficiencia', logo: 'https://spicer.com.ar/wp-content/uploads/2018/10/spicer-logo.svg', desc:"Desde tecnologías innovadoras y patentadas hasta innovaciones líderes en la industria, nuestros productos para vehículos comerciales aumentan la durabilidad, la confiabilidad y la eficiencia para los OEM líderes.", fondo:"https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/022014/spicer.png?itok=ZdGgtEJv" },
-  { id: 7, name: 'TRW', desc: 'Versatilidad', logo: 'https://etman.com.ar/wp-content/uploads/902-11.png', fondo:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7rW0zJ6nkAd_TKTebSfSYkp6YtYTcFafHWfhjjMCgRdaYbVUud2TXmZA&s=10", desc:"TRW tiene a sus espaldas un siglo de desarrollo de productos pioneros, con una especial atención a la calidad. Todo lo que hacemos se sustenta en tres valores básicos." },
-  { id: 8, name: 'Suporte Rei', desc: 'stablecida en 1960 en la ciudad de Cajuru, estado de São Paulo, Suporte Rei pertenece a un grupo de empresas, con 100% de capital brasileño, dedicada a la producción de repuestos para vehículos pesados.', logo: 'https://suporterei.com.br/assets/core/publica/imagens/logo-suporterei-65anos-pt-site2.png', fondo:"https://www.motortrans.com.ar/images/suportrei_fabrica.png" },
-  { id: 9, name: 'Porpora', desc: 'Porpora Hnos. S.R.L. fue fundada el 13 de Agosto de 1951, dedicándose en sus primeros años a la fabricación de todo tipo de repuestos del tren delantero para la línea pesada de vehículos automotores.', logo: 'https://motortrans.com.ar/images/porpora_logo.webp', fondo:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkLovVG_Yz-IDiNP-PjNtZHcugn6FtpaMUVMbMTwT93mjlV2D1CrAtS0U&s=10" },
-  { id: 10, name: 'Etma', desc: 'Nuestras crucetas son diseñadas y producidas bajo los más altos estándares de calidad para garantizar una transmisión de potencia eficiente en todo tipo de aplicaciones: automóviles (generalmente de tracción trasera), camionetas, camiones, máquinas viales, autoelevadores, tractores, y máquinas industriales.', logo: 'https://es.etma.com.ar/wp-content/uploads/2022/12/ETMA-logo.svg', fondo:"https://alephv2imgstorage.blob.core.windows.net/brand-pages/brands/post/28-091b75a5-ce40-428e-a310-356dddfa4e00.jpg" },
-];
+
 
 const BrandSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -34,6 +24,7 @@ const BrandSection = () => {
     img.src = brand.fondo;
   });
 }, []);
+const createSlug = (name) => name.toLowerCase().replace(' ', '-');
 
   return (
     <section className="brand-section overley" id="BrandSection">
@@ -79,10 +70,11 @@ const BrandSection = () => {
           <div className="logo-container" style={{ backgroundImage: `url(${brands[activeIndex].fondo})` }}></div>
           <h2 key={brands[activeIndex].id } className='title-underline is-active'>{brands[activeIndex].name}</h2>
           <p>{brands[activeIndex].desc}</p>
-          <NavLink to="/sachs" className="boton-estilo">
-          <button> 
-              Ir a la pagina
-           </button>
+          <NavLink 
+            to={`/marcas/${createSlug(brands[activeIndex].name)}`} 
+            className="boton-estilo"
+          >
+            <button>Ir a la página</button>
           </NavLink>
         </div>
       </div> 

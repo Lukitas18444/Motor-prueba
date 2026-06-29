@@ -17,7 +17,7 @@ const Sachs = () => {
   const [busqueda, setBusqueda] = useState('');
 
   const productosSachs = productosData.filter((p) => 
-    p.marca === "Sachs" && 
+    p.marca === "Sachs" && p.codigoOriginal.toLowerCase().includes(busqueda.toLowerCase()) ||
     p.codigo.toLowerCase().includes(busqueda.toLowerCase()) 
   );
 
@@ -28,6 +28,7 @@ const Sachs = () => {
       <h1>Repuestos SACHS</h1>
       
       <input 
+      placeholder='Ingrese el código que esta buscando por favor'
   type="text" 
   value={busqueda} 
   onChange={(e) => {

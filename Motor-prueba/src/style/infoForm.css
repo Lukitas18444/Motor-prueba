@@ -1,0 +1,41 @@
+.container-from{
+    background: #fff;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cta-container {
+  background-color: #0b162c; 
+  color: white;
+  padding: 40px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.cta-form {
+  display: flex;
+  gap: 10px;
+}
+
+.cta-form input {
+  padding: 12px;
+  border-radius: 4px;
+  border: none;
+  width: 250px;
+}
+
+.cta-form button {
+  padding: 12px 20px;
+  background-color: #4f46e5; /* Azul brillante */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}

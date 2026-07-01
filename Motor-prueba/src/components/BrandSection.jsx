@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import '../style/brandSection.css';
 
+
 import brands from '../data/brands'
 
 
@@ -79,7 +80,7 @@ const createSlug = (name) => name.toLowerCase().replace(' ', '-');
         </div>
       </div> 
       </div>
-      
+
     </section>
   );
 };
